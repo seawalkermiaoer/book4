@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 # __author__ = 'xianghai'
 
-from gevent.wsgi import WSGIServer
+from gevent.pywsgi  import WSGIServer
 
 from flask import Flask
 from flask import render_template
