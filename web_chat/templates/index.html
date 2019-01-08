@@ -143,15 +143,16 @@
 			$("#sendContent").val("");
 
 			$.ajax({
-				type:"get",
-				url:"http://www.tuling123.com/openapi/api?key=49de46c409c047d19b2ed2285e8775a6&info="+content,
+				type:"post",
+				// url:"http://www.tuling123.com/openapi/api?key=49de46c409c047d19b2ed2285e8775a6&info="+content,
+                url: "/qa",
+                data: {text: content},
 				success:function(result){
 					var obj = result;
 					var tmp = "<span>"+obj.text+"</span>"
 					if (obj.url) {
 						tmp+= "<a href='"+obj.url+"' target='_blank'>"+obj.text+"</a>"
 					}
-
 					var htmll = "<div class='left'><img src='../static/img/l.jpg' width='50' height='50'><span class='msg'>"+tmp+"</span></div>"
 					center.append(htmll);
 					center.scrollTop(center[0].scrollHeight);
